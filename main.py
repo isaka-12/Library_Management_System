@@ -1,3 +1,4 @@
+import os
 from typing import Union
 
 from fastapi import FastAPI
@@ -31,6 +32,6 @@ def delete_item(item_id:int):
     return {"item_id":item_id}
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))  # Get Render's PORT or default to 8000
+    port = int(os.getenv("PORT", 8000)) 
     uvicorn.run(app, host="0.0.0.0", port=port)
     
